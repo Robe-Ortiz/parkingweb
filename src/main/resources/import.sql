@@ -1,0 +1,10 @@
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Toyota', 'Rojo', true);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Ford', 'Azul', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Chevrolet', 'Negro', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Tesla', 'Blanco', true);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Nissan', 'Gris', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('BMW', 'Negro', true);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Audi', 'Azul', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Volkswagen', 'Verde', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Renault', 'Amarillo', false);
+INSERT INTO coche (marca, color, es_electrico) VALUES ('Mercedes', 'Plateado', true);

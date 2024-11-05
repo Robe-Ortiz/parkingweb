@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragmentos/header :: head"></head>
+<body  class="bg-dark">
+
+	<div th:replace="fragmentos/navbar :: navbar"></div>
+
+	<div class="container mt-5">
+		<div class="table-responsive">
+			<table class="table table-dark table-striped table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Marca</th>
+						<th>Color</th>
+						<th>Es Eléctrico</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="coche : ${coches}">
+						<td><a th:href="@{/coche/{id}(id=${coche.id})}" th:text="${coche.id}"></a></td>
+						<td th:text="${coche.marca}">Marca</td>
+						<td th:text="${coche.color}">Color</td>
+						<td th:text="${coche.esElectrico ? 'Sí' : 'No'}">¿Es eléctrico?</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+<div th:replace="fragmentos/scripts :: scripts"></div>
+</body>
+</html>
