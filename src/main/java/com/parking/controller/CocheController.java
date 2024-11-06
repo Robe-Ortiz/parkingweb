@@ -57,4 +57,17 @@ public class CocheController {
 		model.addAttribute("coches", cocheService.getCochesFiltrandoPorSiSonElectricos(esElectrico));
 		return "vistas/coches";
 	}
+	
+	
+	@GetMapping("/coches/incluir")
+	public String mostrarFormulario(Model model) {
+	    model.addAttribute("coche", new Coche()); 
+	    return "vistas/agregar-coche"; 
+	}
+	
+	@PostMapping("/coches/agregar")
+	public String agregarCoche(@ModelAttribute Coche coche) {
+	    cocheService.agregarCoche(coche);
+	    return "redirect:/coches/todos";  
+	}
 }

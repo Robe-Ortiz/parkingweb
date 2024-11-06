@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragmentos/header :: head"></head>
+<body  class="bg-dark text-white">
+
+	<div th:replace="fragmentos/navbar :: navbar"></div>
+	
+	<div class="container mt-5">
+    <h2>Agregar Nuevo Coche</h2>
+    <form th:action="@{/coches/agregar}" method="post" class="mt-4">
+        <div class="form-group">
+            <label for="marca">Marca</label>
+            <input type="text" class="form-control" id="marca" name="marca" required placeholder="Ingrese la marca del coche">
+        </div>
+        <div class="form-group">
+            <label for="color">Color</label>
+            <input type="text" class="form-control" id="color" name="color" required placeholder="Ingrese el color del coche">
+        </div>
+        <div class="form-group">
+            <label for="esElectrico">¿Es eléctrico?</label>
+            <select class="form-control" id="esElectrico" name="esElectrico">
+                <option value="true">Sí</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Coche</button>
+    </form>
+</div>
+
+	<div th:replace="fragmentos/scripts :: scripts"></div>
+	
+</body>
+</html>

@@ -15,4 +15,6 @@ public interface ICocheService {
 	List<Coche> getCochesPorColores(String color);
 	
 	List<Coche> getCochesFiltrandoPorSiSonElectricos(boolean esElectrico);
+	
+	void agregarCoche(Coche coche);
 }

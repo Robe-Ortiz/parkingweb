@@ -39,4 +39,8 @@ public class CocheService implements ICocheService {
 		else
 			return listaDeCoches.stream().filter(c -> !c.getEsElectrico()).toList();
 	}
+	
+	public void agregarCoche(Coche coche) {
+		cocheRespository.save(coche);
+	}
 }
