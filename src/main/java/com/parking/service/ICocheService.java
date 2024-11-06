@@ -11,4 +11,8 @@ public interface ICocheService {
 	Coche getCochePorId(Long id);
 	
 	void eliminarCochePorId(Long id);
+	
+	List<Coche> getCochesPorColores(String color);
+	
+	List<Coche> getCochesFiltrandoPorSiSonElectricos(boolean esElectrico);
 }

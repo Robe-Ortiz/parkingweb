@@ -20,8 +20,8 @@
 					<tr th:each="coche : ${coches}">
 						<td><a th:href="@{/coche/{id}(id=${coche.id})}" th:text="${coche.id}"></a></td>
 						<td th:text="${coche.marca}">Marca</td>
-						<td th:text="${coche.color}">Color</td>
-						<td th:text="${coche.esElectrico ? 'Sí' : 'No'}">¿Es eléctrico?</td>
+						<td><a th:href="@{/coches/colores/{color}(color=${coche.color})}" th:text="${coche.color}"></a></td>
+						<td><a th:href="@{/coches/electrico/{esElectrico}(esElectrico=${coche.esElectrico})}" th:text="${coche.esElectrico ? 'Sí' : 'No'}"></a></td>
 					</tr>
 				</tbody>
 			</table>

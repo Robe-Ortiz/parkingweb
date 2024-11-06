@@ -16,4 +16,10 @@ public class RootController {
 	public String inicio() {
 		return "vistas/index";
 	}
+	
+	@GetMapping("zero")
+	public String divisionPorCero() {
+		int x = 10 / 0;
+		return "";
+	}
 }

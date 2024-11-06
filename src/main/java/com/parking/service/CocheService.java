@@ -26,4 +26,17 @@ public class CocheService implements ICocheService {
 	public void eliminarCochePorId(Long id) {
 		cocheRespository.deleteById(id);
 	}
+	
+	public List<Coche> getCochesPorColores(String color){
+		return cocheRespository.findByColorIgnoreCase(color);
+	}
+	
+	public List<Coche> getCochesFiltrandoPorSiSonElectricos(boolean esElectrico){
+		List<Coche> listaDeCoches = cocheRespository.findAll();
+		
+		if(esElectrico) 
+			return listaDeCoches.stream().filter(c -> c.getEsElectrico()).toList();
+		else
+			return listaDeCoches.stream().filter(c -> !c.getEsElectrico()).toList();
+	}
 }

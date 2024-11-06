@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.parking.entity.Coche;
 import com.parking.service.ICocheService;
@@ -43,5 +44,17 @@ public class CocheController {
 	public String eliminarCochePorId(@PathVariable Long id) {
 		cocheService.eliminarCochePorId(id);
 		 return "redirect:/coches/todos";
+	}
+	
+	@GetMapping("coches/colores/{color}")
+	public String getCochesPorColores(@PathVariable String color, Model model) {		
+		model.addAttribute("coches", cocheService.getCochesPorColores(color));
+		return "vistas/coches";
+	}
+	
+	@GetMapping("coches/electrico/{esElectrico}")
+	public String getCochesPorSiSonElectricos(@PathVariable Boolean esElectrico, Model model) {
+		model.addAttribute("coches", cocheService.getCochesFiltrandoPorSiSonElectricos(esElectrico));
+		return "vistas/coches";
 	}
 }

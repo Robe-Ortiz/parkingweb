@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:replace="fragmentos/header :: head"></head>
+<body  class="zero text-white">
+
+	<div th:replace="fragmentos/navbar :: navbar"></div>
+<main class="container mt-5">
+	<h3 th:text="${error}"></h3>
+	<div th:text="${message}"></div>
+	<div th:text="${status}"></div>
+	<div th:text="${timestamp}"></div>
+	<hr>
+	<div th:text="${trace}"></div>
+</main>
+	<div th:replace="fragmentos/scripts :: scripts"></div>
+	
+</body>
+</html>
